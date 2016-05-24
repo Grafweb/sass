@@ -1,0 +1,64 @@
+$font-stack:    Helvetica, sans-serif;
+$primary-color: #333;
+$media: screen;
+$feature: -webkit-min-device-pixel-ratio;
+$value: 1.5;
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+}
+
+#main {
+  color: black;
+  a {
+    font-weight: bold;
+    &:hover { color: red; }
+  }
+}
+
+
+.message {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+}
+
+.success {
+  @extend .message;
+  border-color: green;
+}
+
+
+@mixin silly-links {
+  a {
+    color: blue;
+    background-color: red;
+  }
+}
+
+@include silly-links;
+
+
+@mixin transition($element: all, $time: .2s, $option: linear) { 
+    -webkit-transition: $element $time $option;
+    transition: $element $time $option; 
+}
+
+
+.foo {
+    @include transition;
+}
+
+
+.foo {
+    @include transition(all, .7s, ease-in-out)
+}
+
+
+@media #{$media} and ($feature: $value) {
+  .sidebar {
+    width: 500px;
+  }
+}
+
