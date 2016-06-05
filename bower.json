@@ -1,0 +1,23 @@
+{
+  "name": "sass",
+  "description": "sass",
+  "main": "index.js",
+  "authors": [
+    "grafweb <grafweb@wp.pl>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "sass"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.4"
+  }
+}
