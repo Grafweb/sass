@@ -26,7 +26,7 @@ gulp.task('compass', function() {
       css: 'stylesheets',
       sass: 'sass'
     }))
-    .pipe(gulp.dest('./test'));
+    .pipe(gulp.dest('./stylesheets'));
 });   
     
     
