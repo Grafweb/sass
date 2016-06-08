@@ -1,4 +1,7 @@
 @import "compass/css3";
+@import "compass/utilities/sprites";
+@import "../images/icons-my/*.png";
+@include all-icons-my-sprites;
 //http://compass-style.org/help/tutorials/spriting/sprite-layouts/
  
 .example {

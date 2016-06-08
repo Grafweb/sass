@@ -1,3 +1,28 @@
+.icons-my-sprite, .icons-my-facebook, .icons-my-google, .icons-my-linkedin, .icons-my-pinterest, .icons-my-twitter {
+  background-image: url('../images/../images/icons-my-s36b80a7e96.png');
+  background-repeat: no-repeat;
+}
+
+.icons-my-facebook {
+  background-position: 0 0;
+}
+
+.icons-my-google {
+  background-position: 0 -20px;
+}
+
+.icons-my-linkedin {
+  background-position: 0 -40px;
+}
+
+.icons-my-pinterest {
+  background-position: 0 -61px;
+}
+
+.icons-my-twitter {
+  background-position: 0 -81px;
+}
+
 .example {
   padding: 2em;
 }
