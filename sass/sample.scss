@@ -3,6 +3,9 @@
 @import "../images/icons-my/*.png";
 @include all-icons-my-sprites;
 //http://compass-style.org/help/tutorials/spriting/sprite-layouts/
+
+$font : 'Open Sans', sans-serif;
+$underline: #ed2553;
  
 .example {
   padding: 2em;
@@ -33,5 +36,126 @@
   }
   #absolute {
     @include background-size(100px 25px);
+  }
+}
+
+%size-box {
+    height: 100px;
+}
+
+.flexSample {
+  @include display-flex;
+  @include flex-direction(column);
+  header {
+    @include flex(0 0 100%);
+    background-color: red;
+  }
+  .flexContent {
+    @include display-flex;
+    @include flex-direction(row);
+    @include align-items(center);
+    background-color: greenyellow;
+    height: 250px;
+    .leftFlex {
+      @include flex(0 0 200px);
+      @extend %size-box;
+      background-color: bisque;
+    }
+    .centerFlex {
+      @include flex(1);
+      height: 150px;
+      background-color: orangered;
+    }
+    .rightFlex {
+      @include flex(0 0 150px);
+      height: 80px;
+      background-color: orangered;
+    }
+  }
+  footer {
+    @include display-flex;
+     @include flex(0 0 100%);
+     background-color: blue;
+  }
+
+}
+
+@media screen and (max-width: 480px) {
+  .flexSample {
+    .flexContent {
+      @include flex-direction(column);
+      .leftFlex {
+        @include flex(1);
+      }
+      .rightFlex {
+        @include flex(1);
+      } 
+    }
+  }    
+}
+
+.container-input {
+  font-family: $font;
+  position: relative;
+  width: 200px;
+  display: block;
+
+  .input-design1 {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 60px;
+    background-color: transparent;
+    border-width: 0;
+    
+    &:focus {
+      
+      ~ label {
+        color: #9d9d9d;
+        @include simple-transform(0.75, null, -12%, -50%, null, null, null, null);
+      }
+
+      ~ .bar {
+        &:before,
+        &:after {
+          width: 50%;
+        }
+      }
+    }
+  }
+
+  label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    line-height: 60px;
+    @include single-transition(all, 0.5s, null, null);
+  }
+
+  .bar {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: #757575;
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      background: $underline;
+      width: 0;
+      height: 2px;
+      @include single-transition(all, 0.5s, ease, null);
+    }
+
+    &:before {
+      left: 50%;
+    }
+
+    &:after {
+      right: 50%;
+    }
   }
 }

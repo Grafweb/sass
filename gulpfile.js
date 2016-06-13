@@ -19,14 +19,18 @@ gulp.task('compass', function() {
     .pipe(gulp.dest('./stylesheets'));
 }); 
 
+ gulp.task('compass:watch', function () {
+  gulp.watch('./sass/*.scss', ['compass']);
+});   
+
 gulp.task('inject', ['compass'], function() {
   gulp.src('./template/index.html')
   .pipe(inject(gulp.src(bowerFiles(), {read: false})))
   .pipe(inject(gulp.src(['./stylesheets/*.css'], {read: false})))
-  .pipe(gulp.dest('./dest'));
+  .pipe(gulp.dest('./'));
 });
 
-gulp.task("default", ['inject']);
+gulp.task("default", ['inject', 'compass:watch']);
 
 
 // gulp.task('sass', function () {
