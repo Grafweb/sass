@@ -1,0 +1,56 @@
+
+%size-box {
+    height: 100px;
+}
+
+.flexSample {
+  @include display-flex;
+  @include flex-direction(column);
+  header {
+    @include flex(0 0 100%);
+    background-color: red;
+  }
+  .flexContent {
+    @include display-flex;
+    @include flex-direction(row);
+    @include align-items(center);
+    background-color: greenyellow;
+    height: 250px;
+    .leftFlex {
+      @include flex(0 0 200px);
+      @extend %size-box;
+      background-color: bisque;
+    }
+    .centerFlex {
+      @include flex(1);
+      height: 150px;
+      background-color: orangered;
+    }
+    .rightFlex {
+      @include flex(0 0 150px);
+      height: 80px;
+      background-color: orangered;
+    }
+  }
+  footer {
+    @include display-flex;
+     @include flex(0 0 100%);
+     background-color: blue;
+  }
+
+}
+
+@media screen and (max-width: 480px) {
+  .flexSample {
+    .flexContent {
+      @include flex-direction(column);
+      .leftFlex {
+        @include flex(1);
+      }
+      .rightFlex {
+        @include flex(1);
+      } 
+    }
+  }    
+}
+

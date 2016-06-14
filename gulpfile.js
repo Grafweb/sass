@@ -5,6 +5,7 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var compass = require('gulp-compass');
 var inject = require('gulp-inject');
+var fileinclude = require('gulp-file-include');
 //var autoprefixer = require('gulp-autoprefixer');
 //var bower = require('gulp-bower');
  
@@ -23,12 +24,27 @@ gulp.task('compass', function() {
   gulp.watch('./sass/*.scss', ['compass']);
 });   
 
+gulp.task('fileinclude', function() {
+  gulp.src(['./template/index.html'])
+    .pipe(fileinclude({
+      prefix: '@@',
+      basepath: '@file'
+    }))
+    .pipe(gulp.dest('./'));
+});
+
 gulp.task('inject', ['compass'], function() {
   gulp.src('./template/index.html')
   .pipe(inject(gulp.src(bowerFiles(), {read: false})))
   .pipe(inject(gulp.src(['./stylesheets/*.css'], {read: false})))
+  .pipe(fileinclude({
+      prefix: '@@',
+      basepath: '@file'
+    }))
   .pipe(gulp.dest('./'));
 });
+
+
 
 gulp.task("default", ['inject', 'compass:watch']);
 

@@ -3,3 +3,5 @@ http://jonstuebe.com/2014/12/26/dealing-with-bower-files/
 http://blog.simontimms.com/2015/01/22/getting-bower-components-in-gulp/
 http://callmenick.com/_development/flexbox-examples/index2.html
 https://github.com/mastastealth/sass-flex-mixin
+http://bxslider.com/
+http://plnkr.co/plunks
