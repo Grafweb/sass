@@ -1,6 +1,6 @@
 
 var angularFilesort = require('gulp-angular-filesort');
-var bowerFiles = require('main-bower-files');
+var bowerMain = require('bower-main');
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var compass = require('gulp-compass');
@@ -8,8 +8,9 @@ var inject = require('gulp-inject');
 var fileinclude = require('gulp-file-include');
 //var autoprefixer = require('gulp-autoprefixer');
 //var bower = require('gulp-bower');
- 
- 
+
+var bowerMainJavaScriptFiles = bowerMain('js','min.js'); 
+
 gulp.task('compass', function() {
   gulp.src('./sass/*.scss')
     .pipe(compass({
@@ -35,7 +36,7 @@ gulp.task('fileinclude', function() {
 
 gulp.task('inject', ['compass'], function() {
   gulp.src('./template/index.html')
-  .pipe(inject(gulp.src(bowerFiles(), {read: false})))
+  .pipe(inject(gulp.src(bowerMainJavaScriptFiles.minified)))
   .pipe(inject(gulp.src(['./stylesheets/*.css'], {read: false})))
   .pipe(fileinclude({
       prefix: '@@',
