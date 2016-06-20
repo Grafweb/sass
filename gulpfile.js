@@ -6,6 +6,8 @@ var sass = require('gulp-sass');
 var compass = require('gulp-compass');
 var inject = require('gulp-inject');
 var fileinclude = require('gulp-file-include');
+var uglify = require('gulp-uglify');
+var rename = require("gulp-rename");
 //var autoprefixer = require('gulp-autoprefixer');
 //var bower = require('gulp-bower');
 
@@ -21,7 +23,7 @@ gulp.task('compass', function() {
     .pipe(gulp.dest('./stylesheets'));
 }); 
 
- gulp.task('compass:watch', function () {
+gulp.task('compass:watch', function () {
   gulp.watch('./sass/*.scss', ['compass']);
 });   
 
@@ -45,9 +47,18 @@ gulp.task('inject', ['compass'], function() {
   .pipe(gulp.dest('./'));
 });
 
+gulp.task('compressjs', function() {
+  return gulp.src('./js/custom/*.js')
+    .pipe(uglify())
+    .pipe(rename("app.js"))
+    .pipe(gulp.dest('./js'));
+});
 
+gulp.task('compressjs:watch', function () {
+  gulp.watch('./js/custom/*.js', ['compressjs']);
+}); 
 
-gulp.task("default", ['inject', 'compass:watch']);
+gulp.task("default", ['inject', 'compass:watch', 'compressjs', 'compressjs:watch']);
 
 
 // gulp.task('sass', function () {

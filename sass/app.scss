@@ -1,8 +1,13 @@
 @import "compass/css3";
 @import "compass/utilities/sprites";
+@import "../node_modules/sass-rem/_rem";
+
+@import '../sass/parts/_start';
+@import '../sass/config/_base-font-size';
+
 @import "../images/icons-my/*.png";
 @include all-icons-my-sprites;
 //http://compass-style.org/help/tutorials/spriting/sprite-layouts/
 
-@import '../sass/flex-grid';
-@import '../sass/underscore-input';
+@import '../sass/parts/flex-grid';
+@import '../sass/parts/underscore-input';
