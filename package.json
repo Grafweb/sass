@@ -4,7 +4,8 @@
   "description": "sass",
   "main": "index.js",
   "dependencies": {
-    "sass-rem": "^1.2.2"
+    "sass-rem": "^1.2.2",
+    "traceur": "0.0.111"
   },
   "devDependencies": {
     "bower-main": "^0.2.14",
