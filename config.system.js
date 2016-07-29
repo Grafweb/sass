@@ -1,7 +1,7 @@
  System.config({
     baseURL: '/',
     meta: {
-        "app" :{
+        "workspace/sass/sass/app/main.js" :{
             deps: [
                 "jquery"
             ]
@@ -13,4 +13,4 @@
   });
 
   // loads /app/main.js
-  System.import('app/main.js');
+System.import('workspace/sass/sass/app/main.js');
