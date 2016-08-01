@@ -16,6 +16,7 @@ time, mark, audio, video {
   border: 0;
   font: inherit;
   font-size: 100%;
+  font-weight: 400;
   vertical-align: baseline;
 }
 
@@ -23,8 +24,20 @@ html {
   line-height: 1;
 }
 
+body {
+    font-family: $fonts-main;
+    font-size: $font-size;
+    color: $color-font-main;
+    -webkit-font-smoothing: antialiased;
+	  -moz-osx-font-smoothing: grayscale;
+}
+
 ol, ul {
   list-style: none;
+}
+
+p {
+  padding-bottom: 20px;
 }
 
 table {
@@ -40,10 +53,23 @@ caption, th, td {
 
 q, blockquote {
   quotes: none;
+  font-family: $fonts-main-italic;
 }
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
+}
+
+strong, b {
+  font-family: $fonts-main-bold;
+}
+
+i {
+  font-family: $fonts-main-italic;
+}
+
+a {
+  color: $a-color;
 }
 
 a img {

@@ -1,0 +1,5 @@
+@mixin wide-max($wide) {
+    @media screen and (max-width: $wide) {
+        @content;
+    }
+}

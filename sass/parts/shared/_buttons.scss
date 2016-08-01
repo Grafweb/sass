@@ -1,0 +1,58 @@
+$button-background-blue: #0093D8;
+$button-color-blue: #ffffff!important;
+$button-white-border: #0085cd;
+$button-white-color: #0085cd;
+$button-transparent-color: white;
+$button-transparent-border: white;
+
+.navireo-button {
+    @include inline-block;
+    font-size: 1.8rem;
+    text-align: center;
+    border-width: 0;
+    font-family: $fonts-main;
+    text-decoration: none;
+    cursor:pointer;
+}
+
+.navireo-button-blue {
+    background-color: $button-background-blue;
+    color: $button-color-blue;
+    font-weight: 300;
+    @include single-transition(all, 0.5s, null, null);
+    &:hover {
+        background-color: darken($button-background-blue, 7%);
+    }
+}
+
+.navireo-button-white {
+    background-color: white;
+    border:1px solid $button-white-border;
+    color: $button-white-color;
+    font-weight: 300;
+    @include single-transition(all, 0.5s, null, null);
+    
+    &:hover {
+        background-color: $button-background-blue;
+        color: white;
+    }
+}
+
+.navireo-button-transparent {
+    background-color: transparent;
+    border:1px solid $button-transparent-border;
+    color: $button-transparent-color;
+    font-weight: 300;
+    @include single-transition(all, 0.5s, null, null);
+    &:hover {
+        background-color: $button-background-blue;
+        border-color: $button-background-blue;
+        color: #EDEDED;
+    }
+}
+
+.navireo-button-250 {
+    width: 250px;
+    height: 55px;
+    line-height: 55px;
+}

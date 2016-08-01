@@ -1,13 +1,13 @@
+@import "compass/support";
 @import "compass/css3";
+@import "compass/css3/animation";
+@import "compass/utilities/general/clearfix";
 @import "compass/utilities/sprites";
 @import "../node_modules/sass-rem/_rem";
 
+@import '../sass/config/_global';
+@import '../sass/config/_font-main';
+@import '../sass/config/_function';
+
 @import '../sass/parts/_start';
 @import '../sass/config/_base-font-size';
-
-@import "../assets/icons-my/*.png";
-@include all-icons-my-sprites;
-//http://compass-style.org/help/tutorials/spriting/sprite-layouts/
-
-@import '../sass/parts/flex-grid';
-@import '../sass/parts/underscore-input';

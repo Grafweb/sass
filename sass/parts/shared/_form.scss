@@ -1,0 +1,91 @@
+$font-form: 'Open Sans', sans-serif;
+$wide-label: 122px;
+$background-label: #F4F4F4;
+$background-input: white;
+$border-input-hover: #0085cd;
+$height-fields: 36px;
+$border-color-field: #BEBEBE;
+$alert-color: #ED1C24;
+$font-size: 1.4rem;
+$color-font: #000000;
+
+.navireo-form {
+    > [class*=navireo] {
+        padding-bottom: 8px;
+        font-size: $font-size;
+        font-family: $font-form;
+    } 
+
+    .navireo-text {
+        label {
+            width: $wide-label;
+            background-color: $background-label; 
+            height: $height-fields;
+            line-height: $height-fields;
+            @include box-sizing(border-box);
+            padding-left: 15px;
+            border-color: $border-color-field;
+            border-style: solid;
+            border-width: 1px 0px 1px 1px;
+            font-family: $font-form;
+            font-size: $font-size;
+            color: $color-font;
+        }
+
+        > [class*=wpcf7-form] {
+            
+            input {
+                font-size: $font-size;
+                font-family: $font-form;
+                color: $color-font;
+                @include single-transition(all, 0.5s, null, null);
+                background-color: $background-input;
+                &:focus {
+                    outline: none;
+                    border-color: $border-input-hover; 
+                }
+            }
+
+            select {
+                font-family: $font-form;
+                font-size: $font-size;
+                
+                &:focus {
+                    outline: none;
+                }
+            }
+
+            input[type=text],
+            input[type=email],
+            input[type=date],
+            input[type=tel],
+            select {
+                height: $height-fields;
+                border-color: $border-color-field;
+                border-style: solid;
+                border-width: 1px 1px 1px 0;
+                padding: 7px 12px;
+                @include box-sizing(border-box);
+                
+                &:focus {
+                    outline: none;
+                    border-color: $border-input-hover; 
+                }
+            }
+
+            span.wpcf7-not-valid-tip {
+                display: block;
+                padding-top: 6px;
+                color: $alert-color;
+                font-size: 1.3rem;
+                line-height: 1.3rem;
+                padding-left: 12px;
+            }
+        }
+    }
+    .navireo-submit {
+        input[type=submit] {
+
+        }
+    }
+}
